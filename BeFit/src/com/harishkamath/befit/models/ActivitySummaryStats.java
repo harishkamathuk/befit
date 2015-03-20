@@ -9,16 +9,16 @@ public class ActivitySummaryStats
     private int count;
 
     @SerializedName("distance")
-    private int distance;
+    private float distance;
 
     @SerializedName("moving_time")
-    private int movingTime;
+    private float movingTime;
     
     @SerializedName("elapsed_time")
-    private int elapsedTime;
+    private float elapsedTime;
     
     @SerializedName("elevation_gain")
-    private int elevationGain;
+    private float elevationGain;
 
 	public int getCount()
 	{
@@ -30,7 +30,7 @@ public class ActivitySummaryStats
 		this.count = count;
 	}
 
-	public int getDistance()
+	public float getDistance()
 	{
 		return distance;
 	}
@@ -40,27 +40,27 @@ public class ActivitySummaryStats
 		this.distance = distance;
 	}
 
-	public int getMovingTime()
+	public float getMovingTime()
 	{
 		return movingTime;
 	}
 
-	public void setMovingTime(int movingTime)
+	public void setMovingTime(float movingTime)
 	{
 		this.movingTime = movingTime;
 	}
 
-	public int getElapsedTime()
+	public float getElapsedTime()
 	{
 		return elapsedTime;
 	}
 
-	public void setElapsedTime(int elapsedTime)
+	public void setElapsedTime(float elapsedTime)
 	{
 		this.elapsedTime = elapsedTime;
 	}
 
-	public int getElevationGain()
+	public float getElevationGain()
 	{
 		return elevationGain;
 	}

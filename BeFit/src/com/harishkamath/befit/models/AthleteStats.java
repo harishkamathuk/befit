@@ -6,10 +6,31 @@ public class AthleteStats
 {
 	
     @SerializedName("biggest_ride_distance")
-    private int biggestRideDistance;	
+    private float biggestRideDistance;	
 
     @SerializedName("biggest_climb_elevation_gain")
-    private int biggestClimbElevationGain;	
+    private float biggestClimbElevationGain;	
+    
+	public float getBiggestRideDistance()
+	{
+		return biggestRideDistance;
+	}
+
+	public void setBiggestRideDistance(float biggestRideDistance)
+	{
+		this.biggestRideDistance = biggestRideDistance;
+	}
+
+	public float getBiggestClimbElevationGain()
+	{
+		return biggestClimbElevationGain;
+	}
+
+	public void setBiggestClimbElevationGain(float biggestClimbElevationGain)
+	{
+		this.biggestClimbElevationGain = biggestClimbElevationGain;
+	}
+    
 
     @SerializedName("recent_ride_totals")
     private ActivitySummaryStats recentRideTotals;	
@@ -29,25 +50,6 @@ public class AthleteStats
     @SerializedName("all_run_totals")
     private ActivitySummaryStats allRunTotals;
 
-	public int getBiggestRideDistance()
-	{
-		return biggestRideDistance;
-	}
-
-	public void setBiggestRideDistance(int biggestRideDistance)
-	{
-		this.biggestRideDistance = biggestRideDistance;
-	}
-
-	public int getBiggestClimbElevationGain()
-	{
-		return biggestClimbElevationGain;
-	}
-
-	public void setBiggestClimbElevationGain(int biggestClimbElevationGain)
-	{
-		this.biggestClimbElevationGain = biggestClimbElevationGain;
-	}
 
 	public ActivitySummaryStats getRecentRideTotals()
 	{
@@ -108,5 +110,4 @@ public class AthleteStats
 	{
 		this.allRunTotals = allRunTotals;
 	}	
-    
 }

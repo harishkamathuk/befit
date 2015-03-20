@@ -30,7 +30,7 @@ public class BefitLauncher
 		    // First get the code the user will enter in a browser.
 		    // UserCode userCode = accountsService.getUserCode(clientId, responseType, redirectUri, state);
 		    // UserCode userCode = new UserCode();
-		    // userCode.setUserCode("01b9bac41b1c1a9d7b331d2c3d7c0ed0fd5dea6b");
+		    // userCode.setUserCode("");
 		    
             // Get the access token after the user verified access.
             // AccessToken accessToken = accountsService.getAccessToken(
@@ -40,24 +40,23 @@ public class BefitLauncher
 
 		    StravaAthleteService athleteService = ServiceGenerator.createService(StravaAthleteService.class, StravaAthleteService.BASE_URL, accessToken);
             
-//            Athlete currentAthlete = athleteService.getCurrentAthlete();
-//            System.out.println(currentAthlete.toString());
+		    Athlete currentAthlete = athleteService.getCurrentAthlete();
+		    System.out.println(currentAthlete.toString());
             
 			int athleteId = 8053081;
 			Athlete athlete = athleteService.getAthleteWithId(athleteId);
 			System.out.println(athlete.toString());
 			
-//            AthleteStats athleteStats = athleteService.getAthleteStats(athleteId);
-            System.out.println(athleteId);
-//            System.out.println(athleteStats.getAllRideTotals().toString());
+			AthleteStats athleteStats = athleteService.getAthleteStats(athleteId);
+			System.out.println(athleteStats.getAllRideTotals().toString());
   	    
        }
         catch (RetrofitError error) {
             if (error.getResponse() == null) {
-                System.out.println("error=" + error);
+                System.out.println("Error - error=" + error);
             }
             else {
-                System.out.println("response=" + error.getResponse() + ", status=" + error.getResponse().getStatus());
+                System.out.println("Error - response=" + error.getResponse().getHeaders() + ", status=" + error.getResponse().getStatus());
             }
         }
         catch (Exception e) {

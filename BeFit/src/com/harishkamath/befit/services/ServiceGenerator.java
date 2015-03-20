@@ -1,5 +1,8 @@
 package com.harishkamath.befit.services;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+
 import com.harishkamath.befit.models.AccessToken;
 import com.squareup.okhttp.OkHttpClient;
 
@@ -22,8 +25,8 @@ public final class ServiceGenerator {
 
         RestAdapter.Builder builder = new RestAdapter.Builder()
                 .setEndpoint(baseUrl)
-                .setLogLevel(RestAdapter.LogLevel.FULL) // this is the important line
-                .setClient(new OkClient(new OkHttpClient()));
+                // .setLogLevel(RestAdapter.LogLevel.FULL) // this is the important line
+                .setClient(new OkClient(new OkHttpClient().setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("ukwebproxy.na.blkint.com", 8080)))));
 
         if (accessToken != null) {
             builder.setRequestInterceptor(new RequestInterceptor() {
